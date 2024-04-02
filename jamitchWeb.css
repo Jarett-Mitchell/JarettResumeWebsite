@@ -1,42 +1,70 @@
+/* Color Palette
+Red: #D7263d
+White: #f5f3f5
+Black: #141414
+Grey: #abacad
+*/
+
 /* Global styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #000000;
-    color: #1a1a1a;
+    background-color: #141414;
+    color: #abacad;
     margin: 0;
     padding: 0;
 }
 
 h1 {
-    color: #e3e0cd;
+    color: #d7263d;
 }
 
 p {
-    color: #e3e0cd;
+    color: #d7263d;
     font-size: 20px;
 }
 
 button {
-    background-color: #e3e0cd;
-    color: #141c3a;
-    width: 100px;
+    background-color: #d7263d;
+    color: #141414;
+    width: auto;
     border: none;
-    border-radius: -5px;
+    border-radius: 0;
     padding: 10px 20px;
-    font-size: 16px;
-    margin: 0 10px;
+    font-size: 24px;
+    margin-right: 10px;
+    margin-left: -10px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
+    position: relative;
+    /* Ensure proper positioning of pseudo-element */
 }
 
-button:after {
+button::before {
     content: "";
-    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    /* Set width to cover the entire viewport */
+    height: 100%;
+    background-color: inherit;
+    /* Inherit background color from button */
+    z-index: -1;
+    /* Push the pseudo-element below the button content */
+    transition: width 0.3s ease-in-out;
+    /* Smooth transition for width change */
+}
+
+button:hover::before {
+    width: calc(100vw + 10px);
+    /* Extend width to cover the button plus margin */
 }
 
 button:hover {
-    background-color: #800000;
-    color: #fff;
+    background-color: #fff;
+    /* Change background color to white on hover */
+    color: #d7263d;
+    /* Change text color to match original button background */
 }
 
 footer {
@@ -64,7 +92,7 @@ footer {
     /* Take up full height of the viewport */
     width: 30px;
     /* Initial width */
-    background-color: #e3e0cd;
+    background-color: #d7263d;
     padding: 20px;
     box-sizing: border-box;
     color: #fff;
@@ -92,13 +120,13 @@ footer {
 .sidebar-ListTitle {
     font-size: 20px;
     font-family: monospace;
-    color: #e3e0cd;
+    color: #d7263d;
 }
 
 .listLink {
     text-decoration: none;
     font-size: 15px;
-    color: #e3e0cd;
+    color: #d7263d;
 }
 
 /*---------------------------------------------------------*/
@@ -106,7 +134,7 @@ footer {
 .subtitle {
     font-size: 24px;
     font-weight: bold;
-    color: #e3e0cd;
+    color: #d7263d;
     margin: 0;
     padding: 0;
 }
@@ -126,7 +154,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
-    background-color: #000000;
+    background-color: #141414;
     /* Marble background color */
     padding: 20px;
     border-radius: 10px;
@@ -137,7 +165,7 @@ footer {
 
 /* Item styles */
 .bento-box {
-    background-color: #e3e0cd;
+    background-color: #d7263d;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -148,7 +176,7 @@ footer {
 }
 
 .bento-box-about-me {
-    background-color: #e3e0cd;
+    background-color: #d7263d;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
