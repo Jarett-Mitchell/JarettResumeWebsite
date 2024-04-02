@@ -5,22 +5,25 @@ Black: #141414
 Grey: #abacad
 */
 
+/* 
+<uniquifier>: Use a unique and descriptive class name
+<weight>: Use a value from 200 to 800
+*/
+
+.manrope {
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+
 /* Global styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Manrope", sans-serif;
     background-color: #141414;
     color: #abacad;
     margin: 0;
     padding: 0;
-}
-
-h1 {
-    color: #d7263d;
-}
-
-p {
-    color: #d7263d;
-    font-size: 20px;
 }
 
 button {
@@ -83,29 +86,21 @@ footer {
 /* Sidebar */
 .sidebar {
     position: fixed;
-    /* Fixed positioning */
     top: 0;
-    /* Stick to the top */
     left: 0;
-    /* Stick to the left */
     height: 100%;
-    /* Take up full height of the viewport */
     width: 30px;
-    /* Initial width */
     background-color: #d7263d;
     padding: 20px;
     box-sizing: border-box;
     color: #fff;
     overflow: hidden;
-    border-radius: 0 1rem 1rem 0;
-    /* Adjusted border radius */
+    border-radius: 0 1rem 0rem 0;
     transition: width .75s ease;
     z-index: 1;
-    /* Ensure the sidebar appears above other content */
 }
 
-.sidebar:hover,
-.sidebar.open {
+.sidebar:hover {
     width: 200px;
 }
 
@@ -149,8 +144,12 @@ footer {
     /* Add transition for smoother animation */
 }
 
+/*---------------------------------------------------------*/
+
 /* bento box */
 .bento-box-container {
+    font-size: 40px;
+    color: #f5f3f5;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
@@ -169,19 +168,16 @@ footer {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: #333333;
     /* Slate text color */
     z-index: 0;
     /* Ensure the bento box appears below the sidebar */
 }
 
-.bento-box-about-me {
-    background-color: #d7263d;
+.bento-box about-me {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: #333333;
-    /* Slate text color */
+
 }
 
 .sidebar.open+.container {
@@ -190,3 +186,5 @@ footer {
     width: calc(80% - 200px);
     /* Adjusted width when sidebar is open */
 }
+
+/*---------------------------------------------------------*/
