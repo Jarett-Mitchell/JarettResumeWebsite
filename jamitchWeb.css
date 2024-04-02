@@ -1,12 +1,7 @@
-/* Color palette
-Whites: #e3e0cd - Marble
-Blacks: #1a1a1a - Slate
-reds: #800000 - Maroon */
-
 /* Global styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #1a1a1a;
+    background-color: #000000;
     color: #1a1a1a;
     margin: 0;
     padding: 0;
@@ -22,10 +17,11 @@ p {
 }
 
 button {
-    background-color: #9bf3f3;
+    background-color: #e3e0cd;
     color: #141c3a;
+    width: 100px;
     border: none;
-    border-radius: 4px;
+    border-radius: -5px;
     padding: 10px 20px;
     font-size: 16px;
     margin: 0 10px;
@@ -33,89 +29,67 @@ button {
     transition: background-color 0.3s ease-in-out;
 }
 
+button:after {
+    content: "";
+    width: 100%;
+}
+
 button:hover {
-    background-color: #00fcdf;
+    background-color: #800000;
+    color: #fff;
 }
 
 footer {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #800000;
     padding-bottom: 260px;
+    position: absolute;
+    bottom: 0;
+    max-width: fit-content;
 }
+
+/*---------------------------------------------------------*/
 
 /* custom classes */
 
-.title {
-    animation: slideIn 1s;
-    color: #e3e0cd;
-    font-size: 48px;
-}
-
-.subtitle {
-    font-size: 24px;
-    font-weight: bold;
-    color: #e3e0cd;
-    margin: 0;
-    padding: 0;
-}
-
-/* Container styles */
-.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Header styles */
-.header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.buttons {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.toplinkbuttons {
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    /* Fixed positioning */
+    top: 0;
+    /* Stick to the top */
+    left: 0;
+    /* Stick to the left */
+    height: 100%;
+    /* Take up full height of the viewport */
+    width: 30px;
+    /* Initial width */
     background-color: #e3e0cd;
-    border-radius: 5%;
-
+    padding: 20px;
+    box-sizing: border-box;
+    color: #fff;
+    overflow: hidden;
+    border-radius: 0 1rem 1rem 0;
+    /* Adjusted border radius */
+    transition: width .75s ease;
+    z-index: 1;
+    /* Ensure the sidebar appears above other content */
 }
 
-/* Content styles */
-.content h2 {
-    font-size: 32px;
-    font-weight: bold;
-    color: #9bf3f3;
-    margin-bottom: 20px;
-    padding: 0;
+.sidebar:hover,
+.sidebar.open {
+    width: 200px;
 }
 
-.content hr {
-    border: none;
-    height: 2px;
-    background-color: #000000;
-    margin-bottom: 30px;
-}
-
-.content p {
-    font-size: 16px;
-}
-
-.projects {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    padding-bottom: 200px;
-}
-
-/* Lists in the footer */
-.list {
+/* List in sidebar*/
+.sidebar-list {
+    align-self: center;
     list-style-type: none;
     word-spacing: normal;
     padding-top: 20px;
 }
 
-.linkListTitle {
+.sidebar-ListTitle {
     font-size: 20px;
     font-family: monospace;
     color: #e3e0cd;
@@ -127,13 +101,64 @@ footer {
     color: #e3e0cd;
 }
 
-/* all animations below here */
-@keyframes slideIn {
-    from {
-        transform: translateX(-310px);
-    }
+/*---------------------------------------------------------*/
 
-    to {
-        transform: translateX(0);
-    }
+.subtitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e3e0cd;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container styles */
+.container {
+    width: calc(80% - 30px);
+    /* Initial width */
+    margin: 0 auto;
+    padding: 20px;
+    transition: width 0.5s ease, margin-left 0.5s ease;
+    /* Add transition for smoother animation */
+}
+
+/* bento box */
+.bento-box-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    background-color: #000000;
+    /* Marble background color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    /* Add margin to separate from the sidebar */
+}
+
+/* Item styles */
+.bento-box {
+    background-color: #e3e0cd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333333;
+    /* Slate text color */
+    z-index: 0;
+    /* Ensure the bento box appears below the sidebar */
+}
+
+.bento-box-about-me {
+    background-color: #e3e0cd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333333;
+    /* Slate text color */
+}
+
+.sidebar.open+.container {
+    margin-left: 200px;
+    /* Adjusted margin-left when sidebar is open */
+    width: calc(80% - 200px);
+    /* Adjusted width when sidebar is open */
 }
