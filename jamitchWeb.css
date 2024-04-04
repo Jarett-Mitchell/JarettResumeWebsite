@@ -146,11 +146,20 @@ button:hover {
     z-index: 0;
 }
 
+.my-face{
+    grid-row: span 3;
+}
+
 .about-me-box {
     grid-column: span 2;
 }
 .project{
     grid-row: span 2;
+    grid-column: span 3;
+}
+
+.reach-me{
+    align-content: center;
 }
 
 /*---------------------------------------------------------*/
