@@ -17,7 +17,7 @@ Grey: #abacad
 /* Global styles */
 body {
     font-family: "Manrope", sans-serif;
-    background-color: #f5f3f5;
+    background-color: #050505;
     color: #f5f3f5;
     margin: 0;
     padding: 0;
@@ -136,26 +136,26 @@ button:hover {
 
 /* bento box */
 .bento-box-container {
-    font-size: 40px;
+    font-size: 30px;
     color: #f5f3f5;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 15px;
-    background-color: #f5f3f5;
+    grid-gap: 25px;
+    background-color: #050505;
     /* Marble background color */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 0 20px #fefefe; */
     margin-top: 20px;
     /* Add margin to separate from the sidebar */
 }
 
 /* Item styles */
 .bento-box {
-    background-color: #d7263d;
+    background-color: #121212;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    /* box-shadow: 0 0px 8px #fefefe; */
     /* Slate text color */
     z-index: 0;
     /* Ensure the bento box appears below the sidebar */
@@ -163,6 +163,9 @@ button:hover {
 
 .about-me-box {
     grid-column: span 2;
+}
+.project{
+    grid-row: span 2;
 }
 
 /*---------------------------------------------------------*/
