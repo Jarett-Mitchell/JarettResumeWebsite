@@ -18,7 +18,7 @@ Grey: #abacad
 body {
     font-family: "Manrope", sans-serif;
     background-color: #f5f3f5;
-    color: #abacad;
+    color: #f5f3f5;
     margin: 0;
     padding: 0;
 }
@@ -29,9 +29,9 @@ button {
     width: auto;
     border: none;
     border-radius: 0;
-    padding: 10px 20px;
+    padding: 15px 5px; /* go fuck yourself idiot */
     font-size: 24px;
-    margin-right: 10px;
+    margin-right: 20px;
     margin-left: -10px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
@@ -39,42 +39,13 @@ button {
     /* Ensure proper positioning of pseudo-element */
 }
 
-button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    /* Set width to cover the entire viewport */
-    height: 100%;
-    background-color: inherit;
-    /* Inherit background color from button */
-    z-index: -1;
-    /* Push the pseudo-element below the button content */
-    transition: width 0.3s ease-in-out;
-    /* Smooth transition for width change */
-}
-
-button:hover::before {
-    width: calc(100vw + 10px);
-    /* Extend width to cover the button plus margin */
-}
-
 button:hover {
-    background-color: #473198;
+    /* background-color: #473198; */
     /* Change background color to white on hover */
     color: #f5f3f5;
     /* Change text color to match original button background */
 }
 
-footer {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #800000;
-    padding-bottom: 260px;
-    position: absolute;
-    bottom: 0;
-    max-width: fit-content;
-}
 
 /*---------------------------------------------------------*/
 
@@ -95,6 +66,7 @@ footer {
     border-radius: 0 0rem 0rem 0;
     transition: width .75s ease;
     z-index: 1;
+    padding: 10px 20px 200px 0px;
 }
 
 .sidebar:hover {
@@ -115,14 +87,27 @@ footer {
     color: #d7263d;
 }
 
-.sidebar-logo{
-    size: 1px;
+.sidebar-logo-container{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
+.sidebar-logo{
+    padding-right: 10px;
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+}
 .listLink {
     text-decoration: none;
     font-size: 15px;
     color: #d7263d;
+}
+
+.sidebar-list button {
+    display: flex;
+    align-items: center;
 }
 
 
@@ -144,6 +129,7 @@ footer {
     padding: 20px;
     transition: width 0.5s ease, margin-left 0.5s ease;
     /* Add transition for smoother animation */
+    /* this holds the bento box, and i don't remember why */
 }
 
 /*---------------------------------------------------------*/
@@ -153,9 +139,9 @@ footer {
     font-size: 40px;
     color: #f5f3f5;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 15px;
-    background-color: #141414;
+    background-color: #f5f3f5;
     /* Marble background color */
     padding: 20px;
     border-radius: 10px;
@@ -175,16 +161,11 @@ footer {
     /* Ensure the bento box appears below the sidebar */
 }
 
-.bento-box about-me-box {
-    background-color: #141414;
-    align-self: auto;
-}
-
-.sidebar.open+.container {
-    margin-left: 200px;
-    /* Adjusted margin-left when sidebar is open */
-    width: calc(80% - 200px);
-    /* Adjusted width when sidebar is open */
+.about-me-box {
+    grid-column: span 2;
 }
 
 /*---------------------------------------------------------*/
+
+
+/* make a bottom button called flash bang that turn the page white */
