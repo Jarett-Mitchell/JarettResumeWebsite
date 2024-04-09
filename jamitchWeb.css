@@ -115,27 +115,37 @@ button:hover {
 
 /* bento box */
 
-.container {
-    width: 90vw;
-    height: 95vh;
-    margin: 0 auto;
-    transition: width 0.5s ease, margin-left 0.5s ease;
-}
-
 .bento-box-container {
-    width: 100%;
+    width: 95%;
     height: 100%;
-    font-size: 30px;
+    font-size: 25px;
     color: #f5f3f5;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 25px;
     background-color: #050505;
     border-radius: 10px;
     /* box-shadow: 0 0 20px #fefefe; */
     margin-top: 25px;
-
+    margin-right: 50px;
+    margin-left: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
+
+/* @media (max-width: 800px) {
+    .bento-box-container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+    
+@media (max-width: 600px) {
+    .bento-box-container{
+        grid-template-columns: 1fr;
+    }
+} */
 
 /* Item styles */
 .bento-box {
@@ -162,6 +172,65 @@ button:hover {
     align-content: center;
 }
 
+.weather{
+    grid-row: span 2;
+    position: relative;
+    width: auto;
+    height: auto;
+    background: purple;
+    border-radius: 16px;
+    padding: 20px;
+
+}
+
+.weather-search-box{
+    position: relative;
+    width: 100%;
+    height: 55px;
+    display: flex;
+    align-items: center;
+}
+
+.weather-search-box i{
+    position: absolute;
+    left: 10px;
+    font-size: 28px;
+}
+
+.weather-search-box input{
+    position:absolute;
+    width: 3%vw;
+    height: 100%;
+    background: transparent;
+    border: 2 px solid rgba(255,255,255,02);
+    outline: none;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 0 48px 0 42px;
+}
+
+.weather-search-box input::placeholder{
+    color: #fff;
+    text-transform: capitalize;
+
+}
+
+.weather-search-box button{
+    position: absolute;
+    right: 0px;
+    width: 40px;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 28px;
+    color: #fff;
+    padding: 0 40px 0 5px;
+    cursor: pointer; 
+}
 /*---------------------------------------------------------*/
 
 
