@@ -51,6 +51,11 @@ button:hover {
 
 /* custom classes */
 
+::selection{
+    color:#121212;
+    background-color: white;
+}
+
 /* Sidebar */
 .sidebar {
     position: fixed;
